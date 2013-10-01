@@ -26,6 +26,8 @@ footer{
 }
 #sidebar{
     float: left;
+    position: relative;
+    width: 270px;
 }
 #sidebar .item{
     height: 200px;
@@ -35,4 +37,5 @@ footer{
 }
 #sidebar .fixed-item{
     background: #EAD2EA;
+    width: 230px;
 }

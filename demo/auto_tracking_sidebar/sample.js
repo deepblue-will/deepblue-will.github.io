@@ -1,14 +1,15 @@
 $(function(){
     var target = $(".fixed-item");
-    var targetTop = target.offset().top;
     var footer = $("footer")
-    var footerTop = footer.offset().top;
+    var targetHeight = target.outerHeight(true);
+    var targetTop = target.offset().top;
 
     $(window).scroll(function(){
         var scrollTop = $(this).scrollTop();
-
         if(scrollTop > targetTop){
-            targetHeight = target.outerHeight(true);
+            // 動的にコンテンツが追加されてもいいように、常に計算する
+            var footerTop = footer.offset().top;
+            
             if(scrollTop + targetHeight > footerTop){
                 customTopPosition = footerTop - (scrollTop + targetHeight)
                 target.css({position: "fixed", top:  customTopPosition + "px"});
