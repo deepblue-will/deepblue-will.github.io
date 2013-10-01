@@ -1,0 +1,32 @@
+
+header, footer{
+    width: 100%;
+    padding: 140px 0;
+    background: #ccc;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#container{
+    margin: 0 auto; 
+    width: 960px;
+    overflow: hidden;
+}
+
+#main{
+    float: left;
+    width: 600px;
+    height: 10000px;
+    background: #eee;
+    padding: 40px;
+    margin: 0 10px 10px 0;
+}
+#sidebar{
+    float: left;
+}
+#sidebar .item{
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background: #ddd;
+}
