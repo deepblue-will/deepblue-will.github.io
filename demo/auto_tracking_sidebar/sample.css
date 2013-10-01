@@ -1,10 +1,13 @@
 
 header, footer{
     width: 100%;
-    padding: 140px 0;
-    background: #ccc;
+    padding: 100px 0;
+    background: #EAD9D2;
     text-align: center;
     margin-bottom: 10px;
+}
+footer{
+    padding: 300px 0;
 }
 
 #container{
@@ -17,7 +20,7 @@ header, footer{
     float: left;
     width: 600px;
     height: 10000px;
-    background: #eee;
+    background: #ddd;
     padding: 40px;
     margin: 0 10px 10px 0;
 }
@@ -28,5 +31,8 @@ header, footer{
     height: 200px;
     margin-bottom: 10px;
     padding: 20px;
-    background: #ddd;
+    background: #eee;
+}
+#sidebar .fixed-item{
+    background: #EAD2EA;
 }
