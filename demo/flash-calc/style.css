@@ -15,7 +15,7 @@ body{
   text-align: center;
 }
 .opening-area{
-  /*display: none;*/
+  display: none;
   padding-top: 48px;
 }
 .mode-select-area{
@@ -25,10 +25,35 @@ body{
   width: 160px;
 }
 .calc-area{
-  
+  font-size: 240px;
+  font-weight: bold;
+  line-height: 400px;
+}
+.calc-area .count-down{
+  /*display: none;*/
+}
+.calc-area .count-down ul{
+  font-size: 240px;
+  font-weight: bold;
+}
+.answer-area{
+  display: none;
 }
 .result-area{
   display: none;
+}
+.result-area .success,
+.result-area .failed{
+  display: none;
+  margin: 32px 0;
+}
+.result-area .result-msg{
+  color: #fff;
+  font-weight: bold;
+}
+.result-area .result-img{
+  height: 160px;
+  width: 320px;
 }
 .eyecatch{
   border: 1px solid #fff;
