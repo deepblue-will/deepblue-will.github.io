@@ -1,24 +1,56 @@
 $(function(){
   var levels = {
     easy: {
-      length: 10, min: 1, max: 9, interval: 1000
+      name: "かんたん", length: 10, min: 1, max: 9, interval: 1000
     },
     normal: {
-      length: 10, min: 1, max: 9, interval: 500
+      name: "ふつう", length: 10, min: 1, max: 9, interval: 500
     },
     hard: {
-      length: 15, min: 1, max: 99, interval: 300
+      name: "むずい", length: 15, min: 1, max: 99, interval: 300
     },
     veryHard: {
-      length: 15, min: 1, max: 999, interval: 200
+      name: "ちょーむずい", length: 15, min: 1, max: 999, interval: 200
     }
   }
-  var level = levels["easy"];
-  var quis = createQuestion(level);
-  showInOrder($(".count-down"), ["③", "②", "①"], 1000, function(){
-    showInOrder($(".calc"), quis.rmds, level.interval, function(){
-      
-    })
+  var modeSelectArea = $(".mode-select-area");
+  var calcArea = $(".calc-area");
+  var answerArea = $(".answer-area");
+  var resultArea = $(".result-area");
+  var level = {};
+  var quis = {};
+  
+  $(".start-btn").on("click", function(){
+    $(".opening-area").hide();
+    modeSelectArea.show();
+  });
+  
+  modeSelectArea.find(".btn").on("click", function(){
+    level = levels[$(this).attr("data-level")];
+    modeSelectArea.hide();
+    quis = createQuestion(level);
+    calcArea.show();
+    showInOrder($(".count-down"), ["③", "②", "①"], 1000, function(){
+      showInOrder($(".calc"), quis.rmds, level.interval, function(){
+        calcArea.hide();
+        setAnswer(answerArea, quis.sum);
+        answerArea.show();
+      })
+    });
+  });
+  
+  answerArea.find(".btn").on("click", function(){
+    answerArea.hide();
+    resultArea.show();
+    var tweetUrl = resultArea.find(".tweet-btn").attr("href");
+    if(quis.sum == $(this).attr("data-answer")){
+      resultArea.find(".tweet-btn").attr("href", tweetUrl + "&text=" + encodeURI("ふらっしゅあんざんのレベル「"+ level.name +"」をくりあ！\n"));
+      resultArea.find(".success").show();
+    } else {
+      resultArea.find(".failed .answer").text(quis.sum);
+      resultArea.find(".tweet-btn").attr("href", tweetUrl + "&text=" + encodeURI("ふらっしゅあんざんのレベル「"+ level.name +"」のクリアに失敗...\n"));
+      resultArea.find(".failed").show();
+    }
   });
   
   function showInOrder(target, ary, interval, callback){
@@ -55,4 +87,15 @@ $(function(){
     }
     return result;
   };
+  
+  function setAnswer(target, answer){
+    answers = [answer, answer + 10, answer -20, answer + Math.floor(Math.random() * 9 + 1), answer + Math.floor(Math.random() * 20 + 10)];
+    answers.sort(function(){
+      return Math.random() - .5;
+    });
+    target.find(".btn").each(function(i){
+      $(this).attr("data-answer", answers[i]);
+      $(this).text(answers[i]);
+    });
+  }
 });

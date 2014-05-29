@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>フラッシュあんざん</title>
+  <title>ふらっしゅあんざん</title>
   <link rel="stylesheet" href="../../framework/foundation-5.2.2/css/normalize.css">
   <link rel="stylesheet" href="../../framework/foundation-5.2.2/css/foundation.min.css">
   <link rel="stylesheet" href="style.css">
@@ -40,22 +40,22 @@
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#easy">かんたん</a>
+              <a class="btn" data-level="easy">かんたん</a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#normal">ふつう</a>
+              <a class="btn" data-level="normal">ふつう</a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#hard">むずい</a>
+              <a class="btn" data-level="hard">むずい</a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#veryHard">ちょーむずい</a>
+              <a class="btn" data-level="veryHard">ちょーむずい</a>
             </div>
           </div>
         </div>
@@ -76,27 +76,27 @@
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#1"></a>
+              <a class="btn"></a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#2"></a>
+              <a class="btn"></a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#3"></a>
+              <a class="btn"></a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#4"></a>
+              <a class="btn"></a>
             </div>
           </div>
           <div class="row">
             <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="#5"></a>
+              <a class="btn"></a>
             </div>
           </div>
         </div>
@@ -105,17 +105,35 @@
             <div class="small-12 small-centered columns center-child">
               <div class="success">
                 <h1 class="result-msg">正解!!</h1>
-                <img class="result-img" src=""></img>
+                <div class="success-msg">
+                  ヽ(*´∀｀)ﾉｵﾒﾃﾞﾄ─ｯ♪
+                </div>
               </div>
               <div class="failed">
                 <h1 class="result-msg">不正解...</h1>
-                <img class="result-img" src=""></img>
+                <div class="failed-msg">
+                  (´・ω・｀)ｶﾞｯｶﾘ…
+                  <p>
+                    正解は
+                    <span class="answer">
+                      22
+                    </span>
+                  でした。
+                  </p>
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="small-12 small-centered columns center-child">
-              <a class="btn" href="tweet-btn">結果をツイート</a>
+            <div class="small-12 small-centered columns">
+              <div class="row">
+                <div class="small-6 columns" style="text-align:right;">
+                  <a class="btn tweet-btn" href="http://twitter.com/share?url=http://deepblue-will.github.io/demo/flash-calc/index.html" data-url="" target="_blank" style="text-align: left;">結果をツイート</a>
+                </div>
+                <div class="small-6 columns">
+                  <a class="btn retry-btn" href="./index.html">もう1回やる！</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

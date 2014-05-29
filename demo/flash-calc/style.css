@@ -15,7 +15,7 @@ body{
   text-align: center;
 }
 .opening-area{
-  display: none;
+  /*display: none;*/
   padding-top: 48px;
 }
 .mode-select-area{
@@ -30,7 +30,7 @@ body{
   line-height: 400px;
 }
 .calc-area .count-down{
-  /*display: none;*/
+  display: none;
 }
 .calc-area .count-down ul{
   font-size: 240px;
@@ -51,18 +51,17 @@ body{
   color: #fff;
   font-weight: bold;
 }
-.result-area .result-img{
-  height: 160px;
-  width: 320px;
+.result-area .failed-msg p{
+  margin: 16px 0;
+}
+.result-area .failed-msg .answer{
+  font-size: 24px;
 }
 .eyecatch{
   border: 1px solid #fff;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
   height: 160px;
   width: 320px;
-}
-.start-btn{
-  margin-top: 16px;
 }
 .center-child{
   text-align: center;
@@ -70,9 +69,17 @@ body{
 .btn{
   border: 3px solid #fff;
   border-radius: 4px;
+  cursor: pointer;
   display: inline-block;
   margin-bottom: 8px;
   padding: 24px;
+}
+.btn:hover{
+  border-color: #ddd; 
+  color: #eee;
+}
+.btn:active{
+  margin: 2px 0 6px 2px;
 }
 a.btn{
   color: #fff;
