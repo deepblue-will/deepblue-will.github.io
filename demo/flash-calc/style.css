@@ -2,10 +2,16 @@ body{
   background-color: #ddd;
   margin-top: 100px;
 }
+@media screen and (max-width: 1000px){
+  body{
+    margin-top: 0;
+  }
+}
 .screen{
   background-color: #000;
   box-shadow: 8px 8px #aaa;
   color: #fff;
+  margin-bottom: 16px;
   min-height: 400px;
 }
 .screen .title{
@@ -15,7 +21,6 @@ body{
   text-align: center;
 }
 .opening-area{
-  /*display: none;*/
   padding-top: 48px;
 }
 .mode-select-area{
@@ -28,6 +33,11 @@ body{
   font-size: 240px;
   font-weight: bold;
   line-height: 400px;
+}
+@media screen and (max-width: 400px){
+  .calc-area {
+    font-size: 160px;
+  }
 }
 .calc-area .count-down{
   display: none;
@@ -84,4 +94,14 @@ body{
 a.btn{
   color: #fff;
 }
-
+.footer{
+  color: #555;
+  text-align: center;
+}
+.footer a{
+  color: #555;
+  font-style: italic;
+}
+.footer a:hover{
+  text-decoration: underline;
+}
