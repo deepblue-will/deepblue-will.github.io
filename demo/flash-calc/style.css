@@ -93,6 +93,7 @@ a.btn{
 }
 .footer{
   color: #555;
+  margin-bottom: 16px;
   text-align: center;
 }
 .footer a{
