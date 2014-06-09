@@ -4,12 +4,36 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>都道府県ますたー</title>
+  <link rel="stylesheet" href="../../stylesheets/normalize.css">
   <link rel="stylesheet" href="style.css">
   <script src="../../javascripts/jquery_1_10_2.js" type="text/javascript" charset="utf-8"></script>
   <script src="../../javascripts/takemaru-hirai-japan-map-73aaabe/jquery.japan-map.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="function.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-  <div id="map-container"></div>
+  <div id="container">
+    <div class="main">
+      <div class="openint-area">
+        <header>
+          <h1>都道府県ますたー</h1>
+        </header>
+        <div class="main-image-wrapper">
+          <div class="circle"></div>
+          <div class="mini-map"></div>
+        </div>
+        <div class="mode-select-btns">
+          <a class="btn" data-mode="easy">初級</a>
+          <a class="btn" data-mode="normal">中級</a>
+          <a class="btn" data-mode="hard">上級</a>
+        </div>
+      </div>
+      <div class="map-area">
+        <h1 class="question"></h1>
+        <div id="map-container"></div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+  </div>
 </body>
 </html>

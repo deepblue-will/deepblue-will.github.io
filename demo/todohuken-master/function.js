@@ -1,10 +1,7 @@
 $(function(){
-  $("#map-container").japanMap({
-    width: 800,
-    movesIslands: true,
-    onSelect: function(data){
-      // alert(data."code");
-    }
+  $(".mini-map").japanMap({
+    drawsBoxLine: false,
+    width: 544,
   })
   
   /** 都道府県データ */
