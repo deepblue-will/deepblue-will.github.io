@@ -19,9 +19,6 @@ header h1:first-letter{
   width: 800px;
   margin: 0 auto;
 }
-.main{
-  
-}
 .main-image-wrapper{
   margin: 16px auto 0px auto;
   position: relative;
@@ -29,18 +26,13 @@ header h1:first-letter{
 .circle{
   background-color: #fefefe;
   border-radius: 50%;
-  bottom: 40px;
+  bottom: 24px;
   height: 480px;
   left: 160px;
   margin: 0 auto;
   opacity: 0.32;
   position: absolute;
   width: 480px;
-}
-.mini-map{
-/*  position: absolute;
-  left: 24px;
-  top: 16px;*/
 }
 .mode-select-btns{
   text-align: center;
@@ -51,6 +43,23 @@ header h1:first-letter{
 }
 .mode-select-btns .btn:first-child{
   margin-left: 0px;
+}
+.map-area{
+  display: none;
+}
+.question-area{
+  min-height: 64px;
+  margin: 16px 0;
+  text-align: center;
+}
+.question{
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+}
+.question strong{
+  color: #951F2B;
+  font-size: 40px;
 }
 .btn{
   cursor: pointer;

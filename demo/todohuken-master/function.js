@@ -1,25 +1,3 @@
-$(function(){
-  $(".mini-map").japanMap({
-    drawsBoxLine: false,
-    width: 544,
-  })
-  
-  $(".mode-select-btns .btn").on({
-    'mouseenter': function(e) {
-        var popover = $(this).next(".popover");
-        var offset = $(this).offset();
-        popover.css({
-            left: (offset.left + $(this).innerWidth()/2 - popover.innerWidth()/2) + "px",
-            top: (offset.top - popover.innerHeight() - 8) + "px"
-        });
-        popover.fadeIn(400);
-    },
-    'mouseleave': function(){
-        var popover = $(this).next(".popover");
-        popover.fadeOut(200);
-    }
-  })
-  
   /** 都道府県データ */
   var todohukenData = [
     {"code": 1, "name": "北海道", "cityNames": ["北見市", "札幌市", "赤平市"], "infos":["玉ねぎの収穫量が一番多い(2014年度)", "コンビニの店舗数が一番多い(2014年度)", "日本で唯一流氷が見れる"]},
@@ -70,4 +48,76 @@ $(function(){
     {"code": 46, "name": "鹿児島県", "cityNames": ["指宿市", "垂水市", "日置市"], "infos":["世界遺産である屋久島がある", "「しろくま」と呼ばれるかき氷が有名", "元アイドル「国生さゆり」の出身地"]},
     {"code": 47, "name": "沖縄県", "cityNames": ["読谷村", "名護市", "久米島町"], "infos":["ファミリーマートの店舗数が一番多い(2014年度)", "合計特殊出生率が一番高い(2013年度)", "2008年までギネスブック公認されてた世界最大のアクリルパネルのある水族館がある"]}
   ]
+  
+$(function(){
+    var mode = "";
+    var questions = shuffle(todohukenData);
+    var currentQuestion = "";
+    var questionIdx = 0;
+    
+    
+  $(".mini-map").japanMap({
+    drawsBoxLine: false,
+    width: 544,
+  })
+  
+  $(".map").japanMap({
+    drawsBoxLine: false,
+    movesIslands: true,
+    width: 800,
+  })
+  
+  $(".mode-select-btns .btn").on({
+    'mouseenter': function(e) {
+        var popover = $(this).next(".popover");
+        var offset = $(this).offset();
+        popover.css({
+            left: (offset.left + $(this).innerWidth()/2 - popover.innerWidth()/2) + "px",
+            top: (offset.top - popover.innerHeight() - 8) + "px"
+        });
+        popover.fadeIn(400);
+    },
+    'mouseleave': function(){
+        var popover = $(this).next(".popover");
+        popover.fadeOut(200);
+    }
+  })
+  
+  $(".mode-select-btns .btn").on('click', function(){
+      mode = $(this).attr("data-mode");
+      $(".opening-area").fadeOut(400, function() {
+          $(".map-area").fadeIn(400, function(){
+              question();
+          });
+      });
+  })
+  
+  function question(){
+    var questionSentence = $(".question");
+    var currentQuestion = questions[questionIdx];
+    questionIdx += 1;
+    console.log(mode)
+    switch(mode){
+        case "easy":
+          questionSentence.append('<strong>' + currentQuestion.name +'</strong>はどこ？');
+          questionSentence.fadeIn(400);
+          break;
+        case "normal":
+          break;
+        case "hard":
+          break;
+    }
+  };
+  
+    function shuffle(array) {
+      var m = array.length, t, i;
+      while (m) {
+        i = Math.floor(Math.random() * m--);
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+      }
+      return array;
+    }
+  
 });
