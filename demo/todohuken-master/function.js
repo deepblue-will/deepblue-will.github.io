@@ -4,6 +4,22 @@ $(function(){
     width: 544,
   })
   
+  $(".mode-select-btns .btn").on({
+    'mouseenter': function(e) {
+        var popover = $(this).next(".popover");
+        var offset = $(this).offset();
+        popover.css({
+            left: (offset.left + $(this).innerWidth()/2 - popover.innerWidth()/2) + "px",
+            top: (offset.top - popover.innerHeight() - 8) + "px"
+        });
+        popover.fadeIn(400);
+    },
+    'mouseleave': function(){
+        var popover = $(this).next(".popover");
+        popover.fadeOut(200);
+    }
+  })
+  
   /** 都道府県データ */
   var todohukenData = [
     {"code": 1, "name": "北海道", "cityNames": ["北見市", "札幌市", "赤平市"], "infos":["玉ねぎの収穫量が一番多い(2014年度)", "コンビニの店舗数が一番多い(2014年度)", "日本で唯一流氷が見れる"]},
