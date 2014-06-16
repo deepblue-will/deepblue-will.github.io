@@ -50,12 +50,16 @@
   ]
   
 $(function(){
-    var mode = "";
-    var questions = shuffle(todohukenData);
-    var currentQuestion = "";
-    var questionIdx = 0;
+  var mode = "";
+  var questions = shuffle(todohukenData);
+  var currentQuestion = "";
+  var questionIdx = 0;
+  
+  var questionSentence = $(".question");
+  var correctMsg = $(".correct-msg");
     
-    
+  var modeMap = {"easy": "初級", "normal": "中級", "hard": "上級"};
+  
   $(".mini-map").japanMap({
     drawsBoxLine: false,
     width: 544,
@@ -65,6 +69,9 @@ $(function(){
     drawsBoxLine: false,
     movesIslands: true,
     width: 800,
+    onSelect: function(data){
+      judge(data);
+    }
   })
   
   $(".mode-select-btns .btn").on({
@@ -92,14 +99,38 @@ $(function(){
       });
   })
   
+  function judge(data){
+    questionSentence.hide();
+    
+    if(currentQuestion == ""){
+    }else if(questionIdx == 47){  
+      //クリアモーダル
+    }else if(data.code == currentQuestion.code){
+      // 判定中に地図をクリックされるのを防止。
+      currentQuestion = "";
+      correctMsg.fadeIn(400, function() {
+        correctMsg.fadeOut(300, function() {
+          question();
+        });
+      });
+    }else{
+      // 失敗モーダル
+      $(".map-area").fadeOut(600, function() {
+        $(".failed.result-msg-area").fadeIn(400, function(){
+          var tweetBtn = $(this).find(".btn.tweet");
+          var baseUrl = tweetBtn.attr("href");
+          tweetBtn.attr("href", createTweetUrl(baseUrl, ["難易度:「", modeMap[mode], "」", String(questionIdx - 1), "問連続正解！あなたはどれくらい都道府県のこと知ってる？「都道府県ますたー」"].join("")));
+        })
+      });
+    }
+  }
+  
   function question(){
-    var questionSentence = $(".question");
-    var currentQuestion = questions[questionIdx];
+    currentQuestion = questions[questionIdx];
     questionIdx += 1;
-    console.log(mode)
     switch(mode){
         case "easy":
-          questionSentence.append('<strong>' + currentQuestion.name +'</strong>はどこ？');
+          questionSentence.html('<strong>' + currentQuestion.name +'</strong>はどこ？');
           questionSentence.fadeIn(400);
           break;
         case "normal":
@@ -109,15 +140,19 @@ $(function(){
     }
   };
   
-    function shuffle(array) {
-      var m = array.length, t, i;
-      while (m) {
-        i = Math.floor(Math.random() * m--);
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-      }
-      return array;
+  function createTweetUrl(baseUrl, text){
+    return [baseUrl, "&text=", encodeURI(text)].join("");
+  }
+  
+  function shuffle(array) {
+    var m = array.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
     }
+    return array;
+  }
   
 });

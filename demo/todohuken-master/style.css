@@ -38,7 +38,6 @@ header h1:first-letter{
   text-align: center;
 }
 .mode-select-btns .btn{
-  display: inline-block;
   margin-left: 56px;
 }
 .mode-select-btns .btn:first-child{
@@ -61,10 +60,50 @@ header h1:first-letter{
   color: #951F2B;
   font-size: 40px;
 }
+.correct-msg{
+  background-color: #F5F4D7;
+  color: #951F2B;
+  display: none;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  opacity: 0.8;
+  text-align: center;
+  top: 40%;
+  width: 800px;
+}
+.result-msg-area{
+  display: none;
+  margin: 64px auto;
+  width: 640px;
+}
+.result-msg-title{
+  font-size: 56px;
+  font-weight: bold;
+  text-align: center;
+}
+.result-msg-content{
+  text-align: center;
+}
+.result-msg{
+  margin: 16px 0 24px 0;
+}
+.result-msg strong{
+  color: #951F2B;
+  font-size: 24px;
+}
+.result-msg-btns .btn{
+  margin-left: 56px;
+}
+.result-msg-btns .btn:first-child{
+  margin-left: 0px;
+}
 .btn{
+  color: #535233;
   cursor: pointer;
   font-weight: bold;
   font-size: 32px;
+  text-decoration: none;
   transition: all .8s;
 }
 .btn:hover{
