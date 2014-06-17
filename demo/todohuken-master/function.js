@@ -1,7 +1,10 @@
   
 $(function(){
   var modeMap = {"easy": "初級", "normal": "中級", "hard": "上級"};
-  var todohukenData = $.getJSON("todofuken_data.json");
+  var todohukenData = [];
+  $.getJSON("todofuken_data.json", function(data){
+    todohukenData = data;
+  });
   var questions = shuffle(todohukenData);
   var mode = "";
   var currentQuestion = "";
@@ -9,7 +12,9 @@ $(function(){
   
   var questionSentence = $(".question");
   var correctMsg = $(".correct-msg");
-    
+  
+  
+  
   $(".mini-map").japanMap({
     drawsBoxLine: false,
     width: 544,
