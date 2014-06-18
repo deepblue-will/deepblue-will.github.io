@@ -1,5 +1,5 @@
 $(function(){
-  // TODO 答え丸見えなのはどうにかしたい。
+  // TODO カンニングはだめですよ！
   var todohukenData = [
     {
         "code": 1,
