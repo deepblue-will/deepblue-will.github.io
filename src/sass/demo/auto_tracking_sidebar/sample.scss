@@ -1,0 +1,41 @@
+.hoge{margin: 0;padding: 0;}
+header, footer{
+    width: 100%;
+    padding: 100px 0;
+    background: #EAD9D2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+footer{
+    padding: 300px 0;
+}
+
+#container{
+    margin: 0 auto; 
+    width: 960px;
+    overflow: hidden;
+}
+
+#main{
+    float: left;
+    width: 600px;
+    height: 10000px;
+    background: #ddd;
+    padding: 40px;
+    margin: 0 10px 10px 0;
+}
+#sidebar {
+  float: left;
+  position: relative;
+  width: 270px;
+  .item {
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background: #eee;
+  }
+  .fixed-item {
+    background: #EAD2EA;
+    width: 230px;
+  }
+}
