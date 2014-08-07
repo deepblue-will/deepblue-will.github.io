@@ -1,0 +1,98 @@
+@import "compass/css3";
+
+#container{
+  height: 600px;
+}
+.uzai-group{
+  width: 200px;
+  position: absolute;
+  bottom: 45%;
+  left: 45%;
+}
+.uzai-msg{
+  display: none;
+}
+.uzai-btn-wrapper{
+  text-align: center;
+}
+.arrow_box {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #333333;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 10px;
+  &:after,&:before{
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after{
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 10px;
+    left: 50%;
+    margin-left: -10px;
+  }
+  &:before{
+    border-color: rgba(51, 51, 51, 0);
+    border-top-color: #333333;
+    border-width: 11px;
+    left: 50%;
+    margin-left: -11px;
+  }
+}
+.btn {
+  @include box-shadow(inset 0px 1px 0px 0px #54a3f7);
+  @include border-radius(3px);
+  @include background-image(linear-gradient(top, #007dc1 5%, #0061a7 100%));
+  display: inline-block;
+  color: #ffffff;
+  font-family: arial;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 6px 24px;
+  text-decoration: none;
+  @include text-shadow(0px 1px 0px #154682);
+  &:hover{
+    @include background-image(linear-gradient(top, #0061a7 5%, #007dc1 100%));
+  }
+  &:active{
+    position:relative;
+    top:1px;
+  }
+}
+
+body.sample2{
+    background: #f5f5f5;
+}
+.outer{
+    width: 595px;
+    margin: auto;
+}
+.shadow{
+    position: relative;
+    &:before, &:after{
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 15px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width:300px;
+      background: #777;
+      @include box-shadow(0 15px 10px #777);
+      @include rotate(3deg);
+    }
+    &:after{
+      @include rotate(3deg);
+      right: 10px;
+      left: auto;
+    }
+}
