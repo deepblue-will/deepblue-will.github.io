@@ -1,0 +1,162 @@
+@import "compass/css3";
+
+body{
+  background: url(../../../images/demo/todouhuken-master/background.jpg);
+  color: #535233;
+  font-family:'Hiragino Mincho ProN', serif;
+  font-size: 16px;
+}
+header,
+footer{
+  text-align: center;
+}
+header .title{
+  font-size: 40px;
+  &:first-letter{
+    color: #951F2B;
+    font-size: 56px;
+  }
+}
+footer{
+  border-top: 1px solid #dccebe;
+  margin: 24px 0;
+  padding-top: 8px;
+  a{
+    color: #535233;
+    font-style: italic;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+#container{
+  width: 800px;
+  margin: 0 auto;
+}
+.main-image-wrapper{
+  margin: 16px auto 0px auto;
+  position: relative;
+}
+.circle{
+  background-color: #fefefe;
+  @include border-radius(50%);
+  bottom: 24px;
+  height: 480px;
+  left: 160px;
+  margin: 0 auto;
+  @include opacity(0.32);
+  position: absolute;
+  width: 480px;
+}
+.mode-select-btns{
+  text-align: center;
+  .btn{
+    margin-left: 56px;
+    &:first-child{
+      margin-left: 0px;
+    }
+  }
+}
+.map-area{
+  display: none;
+}
+.question-area{
+  min-height: 64px;
+  margin: 16px 0;
+  text-align: center;
+}
+.question{
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+  strong{
+    color: #951F2B;
+    font-size: 40px;
+  }
+}
+.correct-msg{
+  background-color: #F5F4D7;
+  color: #951F2B;
+  display: none;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  @include opacity(0.8);
+  text-align: center;
+  top: 40%;
+  width: 800px;
+}
+.result-msg-area{
+  display: none;
+  margin: 64px auto;
+  width: 640px;
+}
+.result-msg-title{
+  font-size: 56px;
+  font-weight: bold;
+  text-align: center;
+}
+.result-msg-content{
+  text-align: center;
+}
+.result-msg{
+  margin: 16px 0 24px 0;
+  strong{
+    color: #951F2B;
+    font-size: 24px;
+  }
+}
+.btn{
+  color: #535233;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 32px;
+  text-decoration: none;
+  @include transition(all .8s);
+  &:hover{
+    color: #A5A36C;
+  }
+  .result-msg-btns &{
+    margin-left: 56px;
+    &:first-child{
+      margin-left: 0px;
+    }
+  }
+}
+.popover{
+  border: 1px solid #535233;
+  @include border-radius(16px); 
+  display: none;
+  margin-bottom: 8px;
+  position: absolute;
+  padding: 16px;
+  text-align: left;
+  width: 256px;
+  > .arrow{
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-bottom-width: 0;
+    bottom: -8px;  
+  }
+  > .arrow, > .arrow:after{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid; 
+  }
+  > .arrow:after{
+    content: " ";
+    bottom: 0;
+    margin-left: -8px;
+    border-width: 8px;
+    border-bottom-width: 0;
+    border-top-color: #535233; 
+  }
+  strong{
+    color: #951F2B;
+  }
+}
