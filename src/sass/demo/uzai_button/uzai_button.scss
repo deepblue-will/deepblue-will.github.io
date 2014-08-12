@@ -1,20 +1,24 @@
 @import "compass/css3";
 
-#container{
+#container {
   height: 600px;
 }
-.uzai-group{
+
+.uzai-group {
   width: 200px;
   position: absolute;
   bottom: 45%;
   left: 45%;
 }
-.uzai-msg{
+
+.uzai-msg {
   display: none;
 }
-.uzai-btn-wrapper{
+
+.uzai-btn-wrapper {
   text-align: center;
 }
+
 .arrow_box {
   position: relative;
   background: #ffffff;
@@ -23,7 +27,7 @@
   margin-bottom: 10px;
   text-align: center;
   border-radius: 10px;
-  &:after,&:before{
+  &:after, &:before {
     top: 100%;
     border: solid transparent;
     content: " ";
@@ -32,14 +36,14 @@
     position: absolute;
     pointer-events: none;
   }
-  &:after{
+  &:after {
     border-color: rgba(255, 255, 255, 0);
     border-top-color: #ffffff;
     border-width: 10px;
     left: 50%;
     margin-left: -10px;
   }
-  &:before{
+  &:before {
     border-color: rgba(51, 51, 51, 0);
     border-top-color: #333333;
     border-width: 11px;
@@ -47,6 +51,7 @@
     margin-left: -11px;
   }
 }
+
 .btn {
   @include box-shadow(inset 0px 1px 0px 0px #54a3f7);
   @include border-radius(3px);
@@ -59,40 +64,42 @@
   padding: 6px 24px;
   text-decoration: none;
   @include text-shadow(0px 1px 0px #154682);
-  &:hover{
+  &:hover {
     @include background-image(linear-gradient(top, #0061a7 5%, #007dc1 100%));
   }
-  &:active{
-    position:relative;
-    top:1px;
+  &:active {
+    position: relative;
+    top: 1px;
   }
 }
 
-body.sample2{
-    background: #f5f5f5;
+body.sample2 {
+  background: #f5f5f5;
 }
-.outer{
-    width: 595px;
-    margin: auto;
+
+.outer {
+  width: 595px;
+  margin: auto;
 }
-.shadow{
-    position: relative;
-    &:before, &:after{
-      z-index: -1;
-      position: absolute;
-      content: "";
-      bottom: 15px;
-      left: 10px;
-      width: 50%;
-      top: 80%;
-      max-width:300px;
-      background: #777;
-      @include box-shadow(0 15px 10px #777);
-      @include rotate(3deg);
-    }
-    &:after{
-      @include rotate(3deg);
-      right: 10px;
-      left: auto;
-    }
+
+.shadow {
+  position: relative;
+  &:before, &:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: #777;
+    @include box-shadow(0 15px 10px #777777);
+    @include rotate(3deg);
+  }
+  &:after {
+    @include rotate(3deg);
+    right: 10px;
+    left: auto;
+  }
 }

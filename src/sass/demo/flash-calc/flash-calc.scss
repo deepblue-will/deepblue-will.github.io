@@ -1,106 +1,119 @@
-body{
+body {
   background-color: #ddd;
   margin-top: 100px;
 }
-@media screen and (max-width: 1000px){
-  body{
+
+@media screen and (max-width: 1000px) {
+  body {
     margin-top: 0;
   }
 }
 
-.screen{
+.screen {
   background-color: #000;
   box-shadow: 8px 8px #aaa;
   color: #fff;
   margin-bottom: 16px;
   min-height: 400px;
-  .title{
+  .title {
     color: #fff;
     margin-bottom: 16px;
     font-weight: bold;
     text-align: center;
   }
 }
-.opening-area{
+
+.opening-area {
   padding-top: 48px;
 }
-.mode-select-area{
+
+.mode-select-area {
   display: none;
-  .btn{
+  .btn {
     width: 160px;
   }
 }
-.calc-area{
+
+.calc-area {
   font-size: 240px;
   font-weight: bold;
   line-height: 400px;
 }
-@media screen and (max-width: 400px){
+
+@media screen and (max-width: 400px) {
   .calc-area {
     font-size: 160px;
   }
 }
-.calc-area .count-down{
+
+.calc-area .count-down {
   display: none;
-  ul{
+  ul {
     font-size: 240px;
     font-weight: bold;
   }
 }
-.answer-area{
+
+.answer-area {
   display: none;
 }
-.result-area{
+
+.result-area {
   display: none;
-  .success, .failed{
+  .success, .failed {
     display: none;
     margin: 32px 0;
   }
-  .result-msg{
+  .result-msg {
     color: #fff;
     font-weight: bold;
   }
-  .failed-msg{
-    p{
+  .failed-msg {
+    p {
       margin: 16px 0;
     }
-    .answer{
+    .answer {
       font-size: 24px;
     }
   }
 }
-.eyecatch{
+
+.eyecatch {
   margin-bottom: 32px;
 }
-.center-child{
+
+.center-child {
   text-align: center;
 }
-.btn{
+
+.btn {
   border: 3px solid #fff;
   border-radius: 4px;
   cursor: pointer;
   display: inline-block;
   margin-bottom: 8px;
   padding: 24px;
-  &:hover{
-    border-color: #ddd; 
+  &:hover {
+    border-color: #ddd;
     color: #eee;
   }
-  &:active{
+  &:active {
     margin: 2px 0 6px 2px;
   }
 }
-a.btn{
+
+a.btn {
   color: #fff;
 }
-.footer{
+
+.footer {
   color: #555;
   margin-bottom: 16px;
   text-align: center;
-  a{
+  a {
     color: #555;
     font-style: italic;
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
