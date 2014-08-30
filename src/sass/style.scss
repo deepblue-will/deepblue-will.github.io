@@ -1,9 +1,10 @@
-@import "../../bower_components/foundation/scss/foundation/components/grid";
 @import "compass/css3";
 
 @mixin fh {
-  box-sizing: border-box;
   height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .circle {
@@ -18,7 +19,7 @@
 .top {
   background: url(../images/bg-top.jpg);
   @include fh;
-  position: relative;
+  z-index: 20;
 }
 
 .top-login {
@@ -62,7 +63,6 @@
   padding: 0 5px;
   width: 100%;
   .placeholder {
-    display: none;
     color: #bbb;
     font-size: 13px;
   }
@@ -89,5 +89,33 @@
     &:hover {
       color: #dfdfdf;
     }
+  }
+}
+
+.about {
+  background: url(../images/bg-about.jpg);
+  @include fh;
+}
+.about-menu{
+  @include background-image(linear-gradient(top, #dedede 0%, #b4b4b4 50%, #9d9d9d 100%));
+}
+.about-menu-items {
+  margin: 0;
+  color: #202020;
+  > li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  a {
+    color: #202020;
+  }
+}
+
+.about-menu-status {
+  margin: 0;
+  color: #202020;
+  li {
+    display: inline-block;
+    margin-right: 15px;
   }
 }

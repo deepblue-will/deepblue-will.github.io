@@ -7,6 +7,6 @@
     "japan-map": "https://github.com/takemaru-hirai/japan-map.git#~0.0.4",
     "foundation": "~5.3.3",
     "skrollr": "~0.6.26",
-    "Font-Awesome": "~4.1.0"
+    "Font-Awesome": "~4.2.0"
   }
 }

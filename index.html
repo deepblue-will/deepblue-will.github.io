@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>deepblue_will's Portfolio Page</title>
   <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
   <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-  <div class="top">
+  <div id="top" class="top" data-450="opacity:1;" data-600="opacity:0;top:0%" data-601="top:-100%">
     <div class="row top-login">
       <div class="small-10 small-centered columns">
         <div class="top-login-user">
@@ -18,9 +19,18 @@
           <div class="top-login-user-name">deepblue_will</div>
         </div>
         <div class="top-login-input">
-          <span class="placeholder">Please Scroll Down.</span>
-          <span class="mask">●●●</span>
-          <i class="fa fa-arrow-circle-o-right mark"></i>
+          <span class="placeholder" data-0="opacity:1;" data-10="opacity:0;display:inline;" data-11="display:none;">Please Scroll Down.</span>
+          <span class="mask">
+            <span data-0="opacity:0;" data-100="opacity:1;">●</span>
+            <span data-100="opacity:0;" data-150="opacity:1;">●</span>
+            <span data-150="opacity:0;" data-200="opacity:1;">●</span>
+            <span data-200="opacity:0;" data-250="opacity:1;">●</span>
+            <span data-250="opacity:0;" data-300="opacity:1;">●</span>
+            <span data-300="opacity:0;" data-350="opacity:1;">●</span>
+            <span data-350="opacity:0;" data-400="opacity:1;">●</span>
+            <span data-400="opacity:0;" data-450="opacity:1;">●</span>
+          </span>
+          <i class="fa fa-arrow-circle-o-right mark" data-0="opacity:0;" data-11="opacity:1;"></i>
         </div>
       </div>
     </div>
@@ -30,32 +40,69 @@
           <div class="small-6 large-3 columns">
             <a href="#about" class="top-menus-link">
               <i class="fa fa-user fa-3x centered"></i>
-              <div class="centered">About</div>
+              <div class="centered"><a href="#about">About</a></div>
             </a>
           </div>
           <div class="small-6 large-3 columns">
             <a href="#skills" class="top-menus-link">
               <i class="fa fa-trophy fa-3x centered"></i>
-              <div class="centered">Skills</div>
+              <div class="centered"><a href="#skill">Skills</a></div>
             </a>
           </div>
           <div class="small-6 large-3 columns">
             <a href="#products" class="top-menus-link">
               <i class="fa fa-cube fa-3x centered"></i>
-              <div class="centered">Products</div>
+              <div class="centered"><a href="#products">Products</a></div>
             </a>
           </div>
           <div class="small-6 large-3 columns">
             <a href="#contact" class="top-menus-link">
               <i class="fa fa-envelope fa-3x centered"></i>
-              <div class="centered">Contact</div>
+              <div class="centered"><a href="#contact">Contact</a></div>
             </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="about" class="about">
+    <div class="about-menu clearfix">
+      <div class="large-4 columns left">
+        <ul class="about-menu-items">
+          <li><a href="#" data-dropdown="apple-drop"><i class="fa fa-apple"></i></a></li>
+          <ul id="apple-drop" class="f-dropdown" data-dropdown-content>
+            <li><a href="#top" title="">Topへ戻る</a></li>
+            <li><a id="shutdown" href="#">スリープ</a></li>
+            <li><a id="shutdown" href="#">再起動</a></li>
+            <li><a id="shutdown" href="#">システム終了...</a></li>
+          </ul>
+          <li><a href="#about"><strong>About</strong></a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="large-4 columns right">
+        <ul class="about-menu-status text-right">
+          <li><i class="fa fa-wifi"></i></li>
+          <li>
+            <span class="current-week" style="margin-right: 5px;"></span>
+            <span class="current-time"></span>
+          </li>
+          <li><i class="fa fa-search"></i></li>
+          <li><i class="fa fa-list-ul"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <script src="bower_components/skrollr/dist/skrollr.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="bower_components/jQuery/dist/jquery.min.js"></script>
+  <script src="bower_components/foundation/js/vendor/fastclick.js"></script>
+  <script src="bower_components/foundation/js/foundation.min.js"></script>
   <script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).foundation();
+    skrollr.init();
+  </script>
 </body>
 </html>
