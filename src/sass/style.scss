@@ -1,5 +1,9 @@
 @import "compass/css3";
 
+.border {
+  border: 1px solid #bbb;
+}
+
 @mixin fh {
   height: 100%;
   position: fixed;
@@ -31,7 +35,7 @@
   top: 0;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 50px;
   margin: auto;
 }
 
@@ -92,22 +96,58 @@
   }
 }
 
+.blackout {
+  background: #000;
+  @include fh;
+  z-index: 19;
+}
+
 .about {
   background: url(../images/bg-about.jpg);
+  background-size: cover;
   @include fh;
+  z-index: 18;
 }
-.about-menu{
+
+.about-menu {
   @include background-image(linear-gradient(top, #dedede 0%, #b4b4b4 50%, #9d9d9d 100%));
 }
+
 .about-menu-items {
-  margin: 0;
+  margin-bottom: 0;
   color: #202020;
   > li {
     display: inline-block;
-    margin-right: 15px;
+    padding: 0 5px;
+    &:hover, &:active {
+      @include background-image(linear-gradient(#7793f5 0%, #406df2 50%, #275af1 100%));
+    }
   }
   a {
     color: #202020;
+    &:hover{
+      color: #fff;
+    }
+  }
+  .f-dropdown {
+    @include border-radius(0 0 4px 4px);
+    margin: 5px 0 0 -5px;
+    padding-top: 2px;
+    &:after,
+    &:before { 
+      border: none;
+    }
+    li {
+      line-height: 7px;
+      a {
+        color: #333;
+        padding-left: 15px;
+      }
+      a:hover{
+        color: #fff;
+        @include background-image(linear-gradient(#7793f5 0%, #406df2 50%, #275af1 100%));
+      }
+    }
   }
 }
 
@@ -116,6 +156,75 @@
   color: #202020;
   li {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 12px;
   }
+}
+
+.about-contents {
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 480px) {
+  .about-menu-status {
+    display: none;
+  }
+  .about-contents {
+    margin-top: 5px;
+  }
+}
+
+
+.window-header {
+  @include background-image(linear-gradient(top, #f0f0f0 0%, silver 100%));
+  @include border-radius(8px 8px 0 0);
+  @include box-shadow(0 1px whitesmoke);
+  border-bottom: 1px solid #a3a4a3;
+  height: 25px;
+  position: relative;
+}
+
+.window-header-btns {
+  position: absolute;
+  margin: 0;
+  left: 5px;
+  li {
+    display: inline-block;
+  }
+}
+
+.mac-window-btn {
+  border: 1px solid #ddd;
+  cursor: pointer;
+  @include box-shadow(0 1px 0px rgba(255, 255, 255, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.8));
+  width: 12px;
+  height: 12px;
+  &:after {
+    @include background-image(linear-gradient(white, rgba(255, 255, 255, 0.9) 2%, white, rgba(255, 255, 255, 0.4) 16%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.7) 100%));
+    @include border-radius(50%);
+    content: '';
+    display: block;
+    margin: 1px;
+    width: 8px;
+    height: 8px;
+  }
+  &.close-btn {
+    background: #F24D4B;
+  }
+  &.min-btn{
+    background: #f4c265;
+  }
+  &.max-btn{
+    background: #a0d57c;
+  }
+}
+
+.window-header-title{
+  text-align: center;
+  text-shadow: 1px 1px #eee;
+}
+
+.window-contents {
+  @include border-radius(0 0 4px 4px);
+  background: #f5f5f5;
+  height: 400px;
 }
